@@ -4,9 +4,9 @@ const contact = ["My email: <a href=\"mailto:vavarela.rodriguez@gmail.com\">vava
 const error = ["Command not recognized. To list all commands type <span class=\"command\">--help</span>"];
 const TODO = ["Ooooops! Feature still in progress <span class=\"distinct\">:(</span>"];
 
-let soundWrongCommand = new Audio('./sounds/wrongCommand.wav');
-let soundTyping1 = new Audio('./sounds/type1.wav');
-let soundTyping2 = new Audio('./sounds/type2.wav');
+let soundWrongCommand = new Audio('./../../sounds/wrongCommand.wav');
+let soundTyping1 = new Audio('./../../sounds/type1.wav');
+let soundTyping2 = new Audio('./../../sounds/type2.wav');
 
 const currentdate = new Date();
 const birthday = new Date(2000, 2, 12)
