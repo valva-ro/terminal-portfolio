@@ -1,0 +1,52 @@
+[
+    {
+        "title": "###############################################################################################\n#  __      __     _               _    _                __      __                _           #\n#   \\ \\  / /__ _ | |  ___  _ __  | |_  _  _ __    __ _   \\ \\  / /__ _  _ __  ___ | |  __ _    #\n#    \\ \\/ // _` || | / _ \\| '_ \\ | __|| || '_ \\  / _` |   \\ \\/ // _` || '__|/ _ \\| | / _` |   #\n#     \\  /| (_| || ||  __/| | | || |_ | || | | || (_| |    \\  /| (_| || |  |  __/| || (_| |   #\n#      \\/  \\__,_||_| \\___||_| |_| \\__||_||_| |_| \\__,_|     \\/  \\__,_||_|   \\___||_| \\__,_|   #\n#                                                                                             #\n###############################################################################################",
+        "github": "https://github.com/valva-ro/",
+        "linkedin": "https://www.linkedin.com/in/vvarela-rodriguez/",
+        "email": "vavarela.rodriguez@gmail.com",
+        "projects": [
+            {
+                "name": "AlgoBlocks",
+                "link": "https://github.com/valva-ro/Algo3-TP2-AlgoBlocks"
+            },
+            {
+                "name": "Snake",
+                "link": "https://valva-ro.github.io/snake/"
+            },
+            {
+                "name": "ToDo",
+                "link":"https://valva-ro.github.io/ToDo/"
+            },
+            {
+                "name": "Super Hero Cards",
+                "link": "https://valva-ro.github.io/CTD-FrontEnd-I/html/card-super-heroes/"
+            }
+        ],
+        "commands": [ 
+            {
+                "cmd": "about",
+                "info": " -----> Learn more about me"
+            },
+            {
+                "cmd": "projects",
+                "info": " --> Show my projects"
+            },
+            {
+                "cmd": "social",
+                "info": " ----> Displays social networks"
+            },
+            {
+                "cmd": "contact",
+                "info": " ---> Displays my email"
+            },
+            {
+                "cmd": "credits",
+                "info": " ---> Show the credits"
+            },
+            {
+                "cmd": "clear",
+                "info": " -----> Clears prompt"
+            }
+        ]
+    }
+]
