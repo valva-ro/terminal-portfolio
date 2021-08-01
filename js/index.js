@@ -38,7 +38,7 @@ fetch("./info.json")
         console.log(err);
     })
 
-setTimeout(begin, 5000);
+setTimeout(begin, 2500);
 
 function begin() {
 
