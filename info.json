@@ -7,45 +7,62 @@
         "projects": [
             {
                 "name": "AlgoBlocks",
+                "description": "I made this project for my university. The idea was to build a desktop app similar to scratch using JavaFX and following design patterns",
                 "link": "https://github.com/valva-ro/Algo3-TP2-AlgoBlocks"
             },
             {
+                "name": "Super Hero Cards",
+                "description": "One of my first 'web' projects, which it's actually a sort of mock-up made with HTML and CSS",
+                "link": "https://valva-ro.github.io/CTD-FrontEnd-I/html/card-super-heroes/"
+            },
+            {
                 "name": "Snake",
+                "description": "Simple snake game made with HTML, CSS and Vainilla JS. The user highscore is saved into the localstorage",
                 "link": "https://valva-ro.github.io/snake/"
             },
             {
                 "name": "ToDo",
+                "description": "Page to write down our to-do's. This project again is made with HTML, CSS and Vainilla JS but I also used an API to save the tasks and user information",
                 "link":"https://valva-ro.github.io/ToDo/"
             },
             {
-                "name": "Super Hero Cards",
-                "link": "https://valva-ro.github.io/CTD-FrontEnd-I/html/card-super-heroes/"
+                "name": "Code Thinkers",
+                "description": "In this case I used a template instead of creating my own page because I want to show the design thinking process I followed to built a prototype",
+                "link": "https://valva-ro.github.io/CTD-DT-codethinkers/"
             }
         ],
         "commands": [ 
             {
                 "cmd": "about",
-                "info": " -----> Learn more about me"
+                "info": " -------> Learn more about me"
             },
             {
                 "cmd": "projects",
-                "info": " --> Show my projects"
+                "info": " ----> Show my projects"
             },
             {
                 "cmd": "social",
-                "info": " ----> Displays social networks"
+                "info": " ------> Displays social networks"
+            },
+            {
+                "cmd": "social -g",
+                "info": " ---> Displays github"
+            },
+            {
+                "cmd": "social -l",
+                "info": " ---> Displays linkedin"
             },
             {
                 "cmd": "contact",
-                "info": " ---> Displays my email"
+                "info": " -----> Displays my email"
             },
             {
                 "cmd": "credits",
-                "info": " ---> Show the credits"
+                "info": " -----> Show the credits"
             },
             {
                 "cmd": "clear",
-                "info": " -----> Clears prompt"
+                "info": " -------> Clears prompt"
             }
         ]
     }

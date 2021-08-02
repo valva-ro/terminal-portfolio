@@ -1,6 +1,6 @@
 let terminalPrompt = document.querySelector("#terminal-prompt");
+let prompt = terminalPrompt.querySelector("#prompt");
 const originalTerminalPrompt = terminalPrompt.innerHTML;
-const prompt = terminalPrompt.querySelector("#prompt");
 const userInput = terminalPrompt.querySelector("#user");
 const soundWrongCommand = new Audio('./../../sounds/wrongCommand.wav');
 const soundTyping1 = new Audio('./../../sounds/type1.wav');
@@ -31,14 +31,12 @@ fetch("./info.json")
         return result.json();
     })
     .then(data => {
-        console.log(data[0]);
         info = data[0];
+        begin();
     })
     .catch(err => {
         console.log(err);
     })
-
-setTimeout(begin, 2500);
 
 function begin() {
 
@@ -47,12 +45,10 @@ function begin() {
     let header = document.querySelector("header");
     const title = `<h1 class="row ascii-art">${info.title}</h1>`;
     const dateText = `<span class=\"command\">[${getDate()}]</span>`;
-    const welcomeMsg1 = `<p>${dateText} Welcome to my portfolio.</p>`;
-    const welcomeMsg2 = `<p>To start enter the command <span class="command">help</span></p>`;
 
     header.innerHTML += title;
-    header.innerHTML += welcomeMsg1;
-    header.innerHTML += welcomeMsg2;
+    header.innerHTML += `<p>${dateText} Welcome to my portfolio.</p>`;
+    header.innerHTML += `<p>To start enter the command <span class="command">help</span></p>`;
 }
 
 function getDate() {
@@ -83,7 +79,11 @@ function handleCommand(command) {
 
         case "projects":
             info.projects.forEach(project => {
-                addParagraph(`<a href="${project.link}" target ="_blank">${project.name}</a>`);
+                const info = `
+                        <a href="${project.link}" target ="_blank">${project.name}</a>
+                        <p>${project.description}</p>
+                    `;
+                addParagraph(info);
             })
             break;
 
@@ -96,11 +96,11 @@ function handleCommand(command) {
             addParagraph(`<a href="${info.linkedin}" target ="_blank">Linkedin</a>`);
             break;
 
-        case "social-github":
+        case "social -g":
             addParagraph(`<a href="${info.github}" target ="_blank">${info.github}</a>`);
             break;
 
-        case "social-linkedin":
+        case "social -l":
             addParagraph(`<a href="${info.linkedin}" target ="_blank">${info.linkedin}</a>`);
             break;
 
