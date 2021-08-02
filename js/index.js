@@ -162,8 +162,8 @@ function handlePrompt() {
                 break;
 
             case "ArrowDown":
-                lastCmdIndex += lastCmdIndex < cmdHistory.length - 1 ? 1 : 0;
-                prompt.value = lastCmdIndex === cmdHistory.length - 1 ? "" : cmdHistory[lastCmdIndex];
+                lastCmdIndex += lastCmdIndex <= cmdHistory.length ? 1 : 0;
+                prompt.value = lastCmdIndex >= cmdHistory.length ? "" : cmdHistory[lastCmdIndex];
                 break;
         }
     });
