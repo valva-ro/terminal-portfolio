@@ -1,13 +1,13 @@
-let terminalPrompt = document.querySelector("#terminal-prompt");
-let prompt = terminalPrompt.querySelector("#prompt");
-const originalTerminalPrompt = terminalPrompt.innerHTML;
-const userInput = terminalPrompt.querySelector("#user");
 const soundWrongCommand = new Audio('./../../sounds/wrongCommand.wav');
 const soundTyping1 = new Audio('./../../sounds/type1.wav');
 const soundTyping2 = new Audio('./../../sounds/type2.wav');
 const currentdate = new Date();
 const birthday = new Date(2000, 2, 12)
 const years = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
+let terminalPrompt;
+let prompt;
+let originalTerminalPrompt;
+let userInput;
 let info = [];
 let cmdHistory = [];
 let lastCmdIndex = 0;
@@ -40,15 +40,19 @@ fetch("./info.json")
 
 function begin() {
 
-    handlePrompt();
+    setTimeout(function () {
+        hideSplash();
+        showContent();
+        handlePrompt();
+        let header = document.querySelector("header");
+        const title = `<h1 class="row ascii-art">${info.title}</h1>`;
+        const dateText = `<span class=\"command\">[${getDate()}]</span>`;
+    
+        header.innerHTML += title;
+        header.innerHTML += `<p>${dateText} Welcome to my portfolio.</p>`;
+        header.innerHTML += `<p>To start enter the command <span class="command">help</span></p>`;
+    }, 2000);
 
-    let header = document.querySelector("header");
-    const title = `<h1 class="row ascii-art">${info.title}</h1>`;
-    const dateText = `<span class=\"command\">[${getDate()}]</span>`;
-
-    header.innerHTML += title;
-    header.innerHTML += `<p>${dateText} Welcome to my portfolio.</p>`;
-    header.innerHTML += `<p>To start enter the command <span class="command">help</span></p>`;
 }
 
 function getDate() {
@@ -168,4 +172,35 @@ function handlePrompt() {
         }
     });
     prompt.addEventListener("keyup", e => playSound(soundTyping2));
+}
+
+function showContent() {
+    document.querySelector("body").innerHTML += `
+        <header class="column"></header>
+
+        <main class="column">
+            <div id="terminal-window">
+                <section id="terminal-top" class="row">
+                    <span class="red circle"></span>
+                    <span class="yellow circle"></span>
+                    <span class="green circle"></span>
+                </section>
+
+                <section id="terminal-body">
+                    <div id="terminal-prompt">
+                        <span id="user" class="written"></span>
+                        <input id="prompt" type="text" value="" autofocus autocomplete="off"/>
+                    </div>
+                </section>
+            </div>
+        </main>
+    `;
+    terminalPrompt = document.querySelector("#terminal-prompt");
+    prompt = terminalPrompt.querySelector("#prompt");
+    originalTerminalPrompt = terminalPrompt.innerHTML;
+    userInput = terminalPrompt.querySelector("#user");
+}
+
+function hideSplash() {
+    document.querySelector("body").removeChild(document.querySelector("#splash"));
 }
