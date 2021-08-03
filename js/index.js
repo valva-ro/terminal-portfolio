@@ -1,6 +1,6 @@
-const soundWrongCommand = new Audio('./../../sounds/wrongCommand.wav');
-const soundTyping1 = new Audio('./../../sounds/type1.wav');
-const soundTyping2 = new Audio('./../../sounds/type2.wav');
+const soundWrongCommand = new Audio('./sounds/wrongCommand.wav');
+const soundTyping1 = new Audio('./sounds/type1.wav');
+const soundTyping2 = new Audio('./sounds/type2.wav');
 const currentdate = new Date();
 const birthday = new Date(2000, 2, 12)
 const years = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
